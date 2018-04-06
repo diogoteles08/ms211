@@ -1,3 +1,4 @@
 function v = getProportionVector(A, n)
-    v[:] = 1/n
+    v = zeros(n, 1)
+    v(:) = 1/n
 end
