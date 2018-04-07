@@ -10,7 +10,16 @@ P = getProbabilityMatrix(A, n);
 
 %%%%% Variáveis de amortecimento
 % Inicializamos a constante de amortecimento (alpha)
-a = 0.85
+a = 0.85;
 
 % Inicializa o vetor de proporcionalidade
 v = getProportionVector(A, n);
+
+P *= a;
+P = eye(n) - P;
+
+v *= 1 - a;
+
+% Agora já podemos dizer que Px = v
+
+x = P \ v;

@@ -8,10 +8,10 @@ function P = getProbabilityMatrix(A, n)
         if conhecidos_de_j > 0
           % Copia a linha j de A dividida pelo escalar conhecidos_de_j
           % para a coluna j de P 
-          P(:, j) = A(j, :) / conhecidos_de_j             
+          P(:, j) = A(j, :) / conhecidos_de_j;
         else
             % Preenche todas os elementos da coluna j com 1/n
-            P(:, j) = 1/n
+            P(:, j) = 1/n;
         end
     end
 end
