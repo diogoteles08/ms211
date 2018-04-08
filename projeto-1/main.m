@@ -22,6 +22,10 @@ v *= 1 - a;
 
 % Agora já podemos dizer que Px = v
 
-x = P \ v;
+[x,Dr]=MetodoGaussSeidel(P,v);
+
+disp(['Erro relativo: ' num2str(Dr(end))])
+disp([''])
+
 
 [representante, vice] = getMax(RA, x);
