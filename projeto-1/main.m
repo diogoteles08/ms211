@@ -23,3 +23,5 @@ v *= 1 - a;
 % Agora já podemos dizer que Px = v
 
 x = P \ v;
+
+[representante, vice] = getMax(RA, x);
