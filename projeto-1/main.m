@@ -14,6 +14,7 @@ P = getProbabilityMatrix(A, n);
 %%%%% Variáveis de amortecimento
 % Inicializamos a constante de amortecimento (alpha)
 a = 0.85
+disp([''])
 
 % Inicializa o vetor de proporcionalidade
 v = getProportionVector(A, n);
@@ -26,9 +27,19 @@ v *= 1 - a;
 % Agora já podemos dizer que Px = v
 
 [x,Dr]=MetodoGaussSeidel(P,v);
-
-disp(['Erro relativo: ' num2str(Dr(end))])
 disp([''])
+disp(['Para o cálculo usando o método de Gauss Seidel:'])
+disp(['Número de condicionamento da matriz P: ' num2str(cond(P))])
+disp(['Inverso do número de condicionamento da matriz P: ' num2str(rcond(P))])
+disp(['Resíduo relativo: ' num2str(norm(v - P*x) / norm(v))])
+disp(['Erro relativo: ' num2str(Dr(end))])
+
+x = P\v;
+disp([''])
+disp(['Para o cálculo usando fatoração LU:'])
+disp(['Número de condicionamento da matriz P: ' num2str(cond(P))])
+disp(['Inverso do número de condicionamento da matriz P: ' num2str(rcond(P))])
+disp(['Resíduo relativo: ' num2str(norm(v - P*x) / norm(v))])
 
 [representante, vice] = getMax(RA, x);
 disp([''])
@@ -39,7 +50,7 @@ disp(['O vice-representante foi indicado ' num2str(sum(A(:,vice))) ' vezes'])
 disp(['O vice-representante indicou ' num2str(sum(A(vice,:))) ' amigos'])
 disp([''])
 disp(['O mais indicado recebeu ' num2str(max(sum(A))) ' indicações']) % maximo da soma das linhas (i=27)
-disp(['Quem tem mais amigos fez ' num2str(max(sum(A,2))) ' indicações']) % maximo da soma das colunas (i=59)
+disp(['Quem indicou mais pessoas fez ' num2str(max(sum(A,2))) ' indicações']) % maximo da soma das colunas (i=59)
 
 % Questao 2
 disp([''])
@@ -53,8 +64,17 @@ v(43) = 0.4;
 v *= 1-a;
 
 [x,Dr]=MetodoGaussSeidel(P,v);
-
+disp(['Para o cálculo usando o método de Gauss Seidel:'])
+disp(['Número de condicionamento da matriz P: ' num2str(cond(P))])
+disp(['Inverso do número de condicionamento da matriz P: ' num2str(rcond(P))])
+disp(['Resíduo relativo: ' num2str(norm(v - P*x) / norm(v))])
 disp(['Erro relativo: ' num2str(Dr(end))])
+
+x = P\v;
 disp([''])
+disp(['Para o cálculo usando fatoração LU:'])
+disp(['Número de condicionamento da matriz P: ' num2str(cond(P))])
+disp(['Inverso do número de condicionamento da matriz P: ' num2str(rcond(P))])
+disp(['Resíduo relativo: ' num2str(norm(v - P*x) / norm(v))])
 
 [representante, vice] = getMax(RA, x);

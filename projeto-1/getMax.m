@@ -4,6 +4,7 @@ function [representante, vice] = getMax(RA, x)
 representante = xsort(end); % pega o indice do maior valor
 vice = xsort(end-1); % pega o indice do 2 maior valor
 
+disp([''])
 disp(['O REPRESENTANTE escolhido foi: '])
 disp(['Índice: ' num2str(representante) ', RA: ' num2str(RA{representante}) ', Representatividade: ' num2str(x(representante))])
 disp([''])
