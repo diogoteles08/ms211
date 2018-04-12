@@ -41,6 +41,22 @@ disp(['Resíduo relativo: ' num2str(r_rel)])
 disp(['Erro relativo mínimo: ' num2str(e_min)])
 disp(['Erro relativo máximo: ' num2str(e_max)])
 
+[x] = eliminacaoGauss(P, v)';
+con = cond(P);
+rcon = rcond(P);
+r_abs = norm(v - P*x, inf);
+r_rel = norm(v - P*x, inf)/norm(v, inf);
+e_min = rcon * r_rel;
+e_max = con * r_rel;
+disp([''])
+disp(['Para o cálculo usando elmininação de Gauss com pivoteamento parcial:'])
+disp(['Número de condicionamento da matriz P: ' num2str(con)])
+disp(['Inverso do número de condicionamento da matriz P: ' num2str(rcon)])
+disp(['Resíduo absoluto: ' num2str(r_abs)]) % norma inf, faz abs e max
+disp(['Resíduo relativo: ' num2str(r_rel)])
+disp(['Erro relativo mínimo: ' num2str(e_min)])
+disp(['Erro relativo máximo: ' num2str(e_max)])
+
 [representante, vice] = getMax(RA, x);
 disp([''])
 disp(['O representante foi indicado ' num2str(sum(A(:,representante))) ' vezes'])
@@ -72,6 +88,22 @@ e_min = rcon * r_rel;
 e_max = con * r_rel;
 disp([''])
 disp(['Para o cálculo usando o método de Gauss Seidel:'])
+disp(['Número de condicionamento da matriz P: ' num2str(con)])
+disp(['Inverso do número de condicionamento da matriz P: ' num2str(rcon)])
+disp(['Resíduo absoluto: ' num2str(r_abs)]) % norma inf, faz abs e max
+disp(['Resíduo relativo: ' num2str(r_rel)])
+disp(['Erro relativo mínimo: ' num2str(e_min)])
+disp(['Erro relativo máximo: ' num2str(e_max)])
+
+[x] = eliminacaoGauss(P, v)';
+con = cond(P);
+rcon = rcond(P);
+r_abs = norm(v - P*x, inf);
+r_rel = norm(v - P*x, inf)/norm(v, inf);
+e_min = rcon * r_rel;
+e_max = con * r_rel;
+disp([''])
+disp(['Para o cálculo usando elmininação de Gauss com pivoteamento parcial:'])
 disp(['Número de condicionamento da matriz P: ' num2str(con)])
 disp(['Inverso do número de condicionamento da matriz P: ' num2str(rcon)])
 disp(['Resíduo absoluto: ' num2str(r_abs)]) % norma inf, faz abs e max
