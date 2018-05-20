@@ -1,0 +1,9 @@
+Segue link com as instruções para o segundo projeto da Turma D de MS211 - Cálculo Numérico: Projeto 2 - Identificação de Lixo Eletrônico (SPAM).
+
+O projeto deve ser realizado individualmente ou em dupla utilizando GNU Octave ou MATLAB. Não será aceito trabalho feito em outra linguagem de programação. O projeto deve ser entregue até o dia 07/06/2018 impresso ou através do Ensino Aberto Moodle. O projeto, que não deve ter mais que 10 páginas com fonte pelo menos 10, deve descrever de forma clara os procedimentos adotados e as conclusões. Em particular, responda as perguntas de forma clara, objetiva e com fundamentos matemáticos. Recomenda-se que os códigos sejam anexados, mas não serão aceitos trabalhos contendo apenas os códigos! Não esqueça de incluir nome e RA!
+
+Segue link para os arquivos:
+
+    DadosTreinamento.mat
+    DadosTeste.mat
+    RNA.m
