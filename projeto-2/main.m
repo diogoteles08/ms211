@@ -11,3 +11,17 @@ b = randn(n, 1);
 G = tanh(W*Xtr+b);
 
 alpha = getAlphaVector(Xtr, ytr, G);
+
+s = RNA(alpha, W, b, Xtr);
+
+L = -2
+ac = getAC(L, s, ytr)
+tfp = getTFP(L, s, ytr)
+
+L = 0
+ac = getAC(L, s, ytr)
+tfp = getTFP(L, s, ytr)
+
+L = 2
+ac = getAC(L, s, ytr)
+tfp = getTFP(L, s, ytr)
