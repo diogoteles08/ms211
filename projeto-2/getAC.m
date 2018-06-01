@@ -5,11 +5,11 @@ function ac = getAC(L, s, ytr)
 
   for i = 1:m
     if (L < s(i)) %spam
-      if (ytr(i) == -1)
+      if (ytr(i) == 1)
         correto++;
       end
     else % nao spam
-      if (ytr(i) == 1)
+      if (ytr(i) == -1)
         correto++;
       end
     end
