@@ -12,12 +12,19 @@ function ok = generateGraph(Lmin, Lmax, s, ytr)
     TFP(i) = getTFP(L(i), s, ytr);
   end
 
+  [max, pos] = max(AC)
+  L(pos)
+  TFP(pos)
+
+
   plot(L, AC, 'o-b', L, TFP, 'o-r');
   xlabel('Limiar');
 	ylabel('AC / TFP');
 	title('Limiar vs. AC e TFP');
 	legend('AC','TFP');
 
-  ok = saveas (1, "graph", "png");
+  saveas(1, "graph", "png");
+
+  ok=L(pos);
 
 end

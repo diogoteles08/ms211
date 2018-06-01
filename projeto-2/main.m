@@ -1,4 +1,5 @@
 load DadosTreinamento.mat
+load DadosTeste.mat
 
 % Constantes definidas no enunciado
 d = 57;
@@ -26,4 +27,9 @@ L = 2
 ac = getAC(L, s, ytr)
 tfp = getTFP(L, s, ytr)
 
-generateGraph(-3, 3, s, ytr);
+Lbest = generateGraph(-3, 3, s, ytr);
+
+L = Lbest 
+s = RNA(alpha, W, b, Xte);
+ac = getAC(L, s, yte)
+tfp = getTFP(L, s, yte)
