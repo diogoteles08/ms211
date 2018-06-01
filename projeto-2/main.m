@@ -25,3 +25,5 @@ tfp = getTFP(L, s, ytr)
 L = 2
 ac = getAC(L, s, ytr)
 tfp = getTFP(L, s, ytr)
+
+generateGraph(-3, 3, s, ytr);
