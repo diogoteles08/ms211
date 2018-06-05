@@ -1,19 +1,17 @@
-function tfp = getTFP(L, s, ytr)
+function tfp = getTFP(L, s, y)
 
   m = size(s, 2); % pega o numero de colunas de s
   wspam = 0; % wrong spam
-  spam = 0; % real spam
+  nspam = 0; % not spam
 
   for i = 1:m
-    if (L < s(i)) % detectado spam
-      if (ytr(i) == -1) % mas nao eh spam
+    if (y(i) == -1) % se nao eh spam
+      nspam++;
+      if (L < s(i)) % mas foi detectado como spam
         wspam++;
       end
     end
-    if (ytr(i) == 1) % se eh spam
-      spam++;
-    end
   end
 
-  tfp = wspam/spam;
+  tfp = wspam/nspam;
 end
