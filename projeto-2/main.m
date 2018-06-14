@@ -29,7 +29,7 @@ tfp = getTFP(L, s, ytr)
 
 Lbest = generateGraph(-3, 3, s, ytr);
 
-L = Lbest 
+L = Lbest
 s = RNA(alpha, W, b, Xte);
 ac = getAC(L, s, yte)
 tfp = getTFP(L, s, yte)
